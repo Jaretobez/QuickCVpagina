@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+}
+
+.cv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Left Column Styles */
+.left-column {
+    width: 35%;
+    background: #f3f3f3;
+    padding: 40px;
+}
+
+.profile-img {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.left-column section {
+    margin-bottom: 30px;
+}
+
+.left-column h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.left-column h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 30px;
+    height: 2px;
+    background: #111;
+}
+
+.info-item p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.skills ul {
+    list-style: none;
+}
+
+.skills li {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.language-item {
+    margin: 15px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: #111;
+}
+
+/* Right Column Styles */
+.right-column {
+    width: 65%;
+    padding: 40px;
+    background: #fff;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.right-column section {
+    margin-bottom: 40px;
+}
+
+.right-column h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.right-column h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 2px;
+    background: #111;
+}
+
+.exp-item, .edu-item {
+    margin-bottom: 25px;
+}
+
+.exp-item h3, .edu-item h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.company, .institution {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column;
+    }
+    
+    .left-column, .right-column {
+        width: 100%;
+    }
+
+
+    @media print {
+  button {
+    display: none;
+  }
+}
+
+.guardar-pdf-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 20px 0;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+}
+
+@media print {
+    .exp-item, .edu-item {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    .botones {
+        display: none;
+    }
+      html, body, #plantilla {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}

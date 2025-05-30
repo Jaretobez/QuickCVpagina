@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CV Generado</title>
+    <link rel="stylesheet" href="plantillas cv/stylesplantilla1.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .page-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto; /* centrado */
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 0;
+        }
+
+        #plantilla {
+            width: 100%;
+            height: 100%;
+        }
+
+        div.botones {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        div.botones button {
+            background-color: #007BFF !important;
+            border: none !important;
+            color: white !important;
+            padding: 10px 20px !important;
+            margin: 10px !important;
+            border-radius: 5px !important;
+            font-size: 16px !important;
+            cursor: pointer !important;
+            transition: background-color 0.3s ease !important;
+        }
+
+        div.botones button:hover {
+            background-color: #0056b3 !important;
+        }
+
+        @media print {
+            body, html {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+            }
+
+            .page-container {
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                width: 210mm !important;
+                height: 297mm !important;
+            }
+
+            div.botones {
+                display: none !important;
+            }
+
+            .exp-item, .edu-item {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        <div id="plantilla"><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Minimalista</title>
+    <link rel="stylesheet" href="stylesplantilla1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<body>
+    <div id="plantilla">
+
+
+
+
+    <div class="cv-container">
+        <div class="left-column">
+            <div class="profile-img">
+                <img id="preview-imagen" src="http://localhost:3000/Users/jared/OneDrive/Documentos/Aplicaciones con base de datos/QuickCV4/uploads/senior.jpeg" alt="Foto de perfil">
+            </div>
+
+            <section class="contact-info">
+                <h2>CONTACTO</h2>
+                <div class="info-item">
+                    <p id="preview-correo">jared@gmail.com</p>
+                    <p id="preview-telefono">10932019</p>
+                    <p id="preview-direccion">Justo sierra</p>
+                </div>
+            </section>
+
+            <section class="skills">
+                <h2>HABILIDADES</h2>
+                <ul id="preview-habilidades"><li>html</li><li>css</li><li>javascript</li><li>php</li><li>lavarel</li></ul>
+            </section>
+
+            <section class="languages"><h2>IDIOMAS</h2><ul><li> - 50%</li></ul></section>
+        </div>
+
+        <div class="right-column">
+            <header>
+                <h1 id="preview-nombre">jarerd</h1>
+                <h2 id="preview-puesto">gerente de soporte TI</h2>
+            </header>
+
+            <section class="about">
+                <h2>SOBRE MÍ</h2>
+                <p id="preview-descripcion">Descripción personal</p>
+            </section>
+
+            <section class="experience">
+                <h2>EXPERIENCIA</h2>
+                <div id="preview-experiencia"><div class='exp-item'><h4> - </h4><p> - </p><p></p></div></div>
+            </section>
+
+            <section class="education">
+                <h2>FORMACIÓN</h2>
+                <div id="preview-formacion"><div class='edu-item'><h4> - </h4><p></p></div></div>
+            </section>
+        </div>
+    </div>
+    </div>
+</body>
+
+
+</html>
+</div>
+    </div>
+
+    <div class="botones">
+        <a href="index.php"><button>Regresar al inicio</button></a>
+        <button onclick="guardarPDF()" class="guardar-pdf-btn">Guardar como PDF</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        async function guardarPDF() {
+            const element = document.getElementById("plantilla");
+            const canvas = await html2canvas(element, {
+                scale: 3,
+                useCORS: true,
+                scrollY: -window.scrollY
+            });
+
+            const imgData = canvas.toDataURL("image/jpeg", 1.0);
+            const pdf = new jspdf.jsPDF({
+                orientation: "portrait",
+                unit: "mm",
+                format: "a4"
+            });
+
+            const pageWidth = 210;
+            const pageHeight = 297;
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pageWidth;
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
+            pdf.save("mi_curriculum.pdf");
+        }
+    </script>
+</body>
+</html>

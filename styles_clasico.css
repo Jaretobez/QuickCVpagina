@@ -1,0 +1,177 @@
+/* stylesplantilla-clasica.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    background: #fff;
+    color: #000;
+    line-height: 1.6;
+}
+
+.cv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+    border: 1px solid #ccc;
+}
+
+.left-column {
+    width: 35%;
+    background: #f9f9f9;
+    padding: 40px;
+    border-right: 1px solid #ccc;
+}
+
+.profile-img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px;
+    border: 1px solid #ccc;
+}
+
+.left-column h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 4px;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.info-item p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+.skills ul {
+    list-style: square;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.skills li {
+    margin: 6px 0;
+}
+
+.languages .language-item {
+    margin-bottom: 10px;
+}
+
+.right-column {
+    width: 65%;
+    padding: 40px;
+    background: #fff;
+}
+
+header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+}
+
+header h2 {
+    font-size: 16px;
+    color: #444;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+.right-column section {
+    margin-bottom: 30px;
+}
+
+.right-column h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.right-column p, .right-column li {
+    font-size: 14px;
+    color: #222;
+}
+
+.exp-item, .edu-item {
+    margin-bottom: 20px;
+}
+
+.exp-item h3, .edu-item h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #000;
+}
+
+.company, .institution {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 6px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: #e0e0e0;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: #666;
+}
+
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        width: 100%;
+    }
+}
+
+@media print {
+    button {
+        display: none;
+    }
+}
+
+.guardar-pdf-btn {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 0;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+@media print {
+    .exp-item, .edu-item {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    .botones {
+        display: none;
+    }
+}
