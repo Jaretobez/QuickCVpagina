@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV Clásico</title>
+  <link rel="stylesheet" href="styles_clasico.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div id="plantilla">
+    <div class="cv-container">
+      <div class="left-column">
+        <div class="profile-img">
+          <img id="preview-imagen" src="{{imagen}}" alt="Foto de perfil" />
+        </div>
+
+        <section class="contact-info">
+          <h2>Contacto</h2>
+          <div class="info-item">
+            <p id="preview-correo">{{correo}}</p>
+            <p id="preview-telefono">{{telefono}}</p>
+            <p id="preview-direccion">{{direccion}}</p>
+          </div>
+        </section>
+
+        <section class="skills">
+          <h2>Habilidades</h2>
+          <ul id="preview-habilidades">
+            <!-- Habilidades dinámicas -->
+          </ul>
+        </section>
+
+        <section class="languages">
+          <h2>IDIOMAS</h2>
+          <div id="preview-idiomas">
+            <!-- Idiomas dinámicos -->
+          </div>
+        </section>
+      </div>
+
+      <div class="right-column">
+        <header>
+          <h1 id="preview-nombre">{{nombre}}</h1>
+          <h2 id="preview-puesto">{{puesto}}</h2>
+        </header>
+
+        <section class="about">
+          <h2>Sobre mí</h2>
+          <p id="preview-descripcion">{{sobremi}}</p>
+        </section>
+
+        <section class="experience">
+          <h2>Experiencia</h2>
+          <div id="preview-experiencia">
+            <!-- Experiencia laboral dinámica -->
+          </div>
+        </section>
+
+        <section class="education">
+          <h2>Formación</h2>
+          <div id="preview-formacion">
+            <!-- Formación académica dinámica -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

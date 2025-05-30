@@ -179,6 +179,7 @@ header h2 {
 }
 }
 
+
 @media print {
     .exp-item, .edu-item {
         page-break-inside: avoid;
@@ -187,8 +188,4 @@ header h2 {
     .botones {
         display: none;
     }
-      html, body, #plantilla {
-    margin: 0 !important;
-    padding: 0 !important;
-  }
 }
